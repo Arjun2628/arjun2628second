@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  alt="#" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body style="overflow-x:hidden;">
+    <header class="bg-info">
+
+        <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark" style="padding-left: 5em; height: 3em;">
+                    <div class="col-md-9"></div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto col-md-3" style="color: white;">
+                      <li class="nav-item " style="height: 100%;">
+                          <a class="nav-link" href="#"  style="color: white;;">DealerLocator</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="#"  style="color: white;">TestRide</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link " href="#"  style="color: white;">India_English</a>
+                        </li>
+                     </ul>
+                </div>
+            </nav>
+            </div>
+         </div>
+         <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 5em; height: 4em;">
+                <a class="navbar-brand" href="#">
+                    <img src="images/shield-icon-black.svg"  alt="#" style="width: 60px;height: 46px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto col-md-9">
+                    <li  class="nav-item" style="height: 5em;padding-top: 1em;" id="bikes" onmouseenter="btnblack('bikes','textbike')" onmouseleave="btnwhite('bikes','textbike')">
+                        <a id="textbike" class="nav-link fw-bold" href="#" style="color: black">BIKES</a>
+                    </li>
+                    <li class="nav-item"  style="height: 5em;padding-top: 1em;color: aliceblue;" id="parts" onmouseenter="btnblack('parts','textpart')" onmouseleave="btnwhite('parts','textpart')">
+                      <a a id="textpart" class="nav-link fw-bold" href="#" style="color: black">PARTS</a>
+                    </li>
+                    <li class="nav-item"  style=" height: 5em;padding-top: 1em; " id="mens" onmouseenter="btnblack('mens','textmen')" onmouseleave="btnwhite('mens','textmen')">
+                        <a a id="textmen" class="nav-link fw-bold" href="#" style="color: black">MENS</a>
+                      </li>
+                   
+                    <li class="nav-item"  style="  height: 5em;padding-top: 1em;" id="womens" onmouseenter="btnblack('womens','textwomen')" onmouseleave="btnwhite('womens','textwomen')">
+                      <a a id="textwomen" class="nav-link  fw-bold" href="#" style="color: black">WOMENS</a>
+                    </li>
+                    <li class="nav-item"  style=" height: 5em;padding-top: 1em;" id="experience" onmouseenter="btnblack('experience','textex')" onmouseleave="btnwhite('experience','textex')">
+                        <a a id="textex" class="nav-link  fw-bold" href="#" style="color: black">EXPERIENCE H-D</a>
+                    </li>
+                  </ul>
+                  <div class=" col-md-3">
+                  <form class="form-inline my-2 my-lg-0" style="display: flex;color: rgb(255, 255, 255);">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="    width: 12em; margin-right: 1vw; height: 5vh; margin-top: 1vh;box-shadow: none;">
+                    <div style="height: 3em;width: 3em;">
+                        <div style="width: 100%;height: 70%;">
+                            <img style="    width: 60%; height: 100%; padding: 7px;margin-left: 10px;margin-top: 3px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAB8CAMAAAChUkXqAAAAZlBMVEUAAAD////6+vrn5+ekpKRsbGzLy8s4ODjZ2dk7Ozvw8PBFRUXt7e3Ozs739/eIiIgbGxtOTk7h4eFAQECzs7OYmJgzMzNaWlqCgoK+vr58fHyOjo4lJSUJCQnFxcV1dXVkZGQTExNP0ewqAAAD2klEQVRogcWa6ZqqMAxAI6uD7IoOq/L+L3lBHFls2qTS757fMznTptAkDByohJfa9Zu2bXy3voTkXwPajx2TFFakyXFHQZeBgKzbSXA8icKPnAirUAt+sfAjv18Lcl8WH8DPvxN48vAj3jeCUh0foNQXEP5+5RpkgiMtPoDsMEkE8Q9V8BNrCSpqfIBKR0BMwASeBlRgnTmCs8UWXDjxAS5cAW8BkiVggogXHyBiCu5cwZ0nCFJ1yDVpwBKwdwjdI0RQ8AUFS/DgCx4cgYXekjgn8UEVC4KeL+jFWRYLQn58AHGtJBbYOgKbIch1BOLr/z9tUaAj4CQ5vvLjX8X3JvKg3fiCmzgSIpDWi2KQKhIRkCquNUj9hQg0HgTxY4BeOOwkIClABcw7H7/1MUHIfN31WNeGli0JT5BgcVCB3XLit0iKZaUj69ZE7kupwCIX10N5jVaOsuqaUVlgVZdccHCo8R1JEGkLRXwjSXtZeRPoUuK70hCKNpbQ5Ui6G4JAfVjxA0oTHCLpA9dKzg9RcIglqf6VtJdkwdAvI7l2KSMj2kAq386jxomUagzCEQxExWIqlRXKvWcLRuKoK8suUm+8rkAHjsAK8+NAHuLvTm1B4BXuotq7uoWHNH06grwQTx0LyjlSCgJH0vOfHeU6FIJc+barFMuQCmzSyKhCL3yFICZf+4XWxMtTTEyX+PyBlMUtvJjjnJzdiZ+QZIsFpU4jLm4QhAJyvbJGWL2IBLVefICaJtDoz/4QVEifgi/iiwwfAu39mfjYpa1AM78z20xvBKx5shhPJtAa42yxcQGn58BZdyMrAWOgL6PCBBrzAzGlWMCf9mIsp8ALAXtcjXMXCXY4oTPep0BnFoszT2nfgq8f4TXOVhA0+wqaYCPQGLfLKdaCvRcwLwEMLeC9hEmgMydV8ZqjTgL2AI3CZSHQmMOquc0CrWG7mvwt+PIexqj/BNbuZ3SisV4CjY9mNKKXgFlI00leAkM7NOzRJCD/bwCf41Ow84t6ifMUGHnKJm6jwDIXH8AaBAZTMCYBTKZgTALsWa18ch8EzH8/4HEeBCbjwxB+l4odx4ZdC7pPPDByW85cwEA9saQAY+/qiQRInwj0cUE479uPDBhjJx182K1vEpOCxmSIQw+sL4p8DIcfMXhhTuFDA5X7zDWEQ2zwWU7iZ+Fl10bOalrbc4fTVTs70qpbdjhjiZ077k41ZOM6+Wcj/sTuVh86+FzdopMMpCZiu3NqN2PtWZq5tdPZgim87PuBlUdd6RRJUj2yk9+kfd8OD2bb9n3a+KfsUSVJ4ZRdlMs+Gv0DEvYsLaYOgrwAAAAASUVORK5CYII=">
+
+                        </div>
+                        <div style="width: 100%;height: 30%;text-align: center;font-size: small;">
+                            <p style="margin-top: -3px;color: black;">Sign in</p>
+
+                        </div>
+
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </nav>
+
+         </div>   
+
+
+    </header>
+
+    <section>
+        <div class="row" >
+            <div class="col-md-12 cmp-tall-hero__image-stage cmp-tall-hero__image-desktop lazy entered" style="position: relative;">
+                <img src="images/my23-carryover-tall-hero-desktop.webp"  alt="#" class="col-lg-12 col-12" >
+              
+            </div>
+            <div style="height: 0vh;width: 43vw; margin-top: 0vh;position: absolute;padding-left: 21vw; padding-top: 20vh;color: white;" class="overlay d-none d-none d-sm-none d-md-block">
+                <h2 class="fw-bold">NEW YEAR. NEW<br>THRILLS.</h2>
+                <p>Explore the 2023 Harley-Davidson® lineup.</p>
+                <button class="btn btn-dark fw-bold">SEE MODELS</button>
+            </div>
+            <div style="height: 56vw;width: 43vw;background-color: black;color: white; margin-top: 0vh;position: absolute;padding-left: 6vw;padding-right: 8vw; padding-top: 20vh;color: white;" class="overlay d-none d-none d-sm-none d-md-block d-lg-none d-xl-none">
+                <h2 class="fw-bold">NEW YEAR. NEW<br>THRILLS.</h2>
+                <p>Explore the 2023 Harley-Davidson® lineup.</p>
+                <button class="btn btn-dark fw-bold"  style="width: 100%;background-color: white;color: black;">SEE MODELS</button>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12 col-12  d-md-none d-lg-none d-xl-none" style="background-color: black;color: white;padding-bottom: 2vh;">
+                <h2 class="fw-bold">NEW YEAR. NEW<br>THRILLS.</h2>
+                <p>Explore the 2023 Harley-Davidson® lineup.</p>
+                <button class="btn btn-dark fw-bold" style="width: 100%;background-color: white;color: black;">SEE MODELS</button>
+
+            </div>
+         </div>
+
+    </section>
+    <section>
+        
+            <div class="row bg-light">
+                <div class="navbar navbar-expand-lg navbar-light bg-light bg-white" style="padding-left: 5em; height: 4em;">
+                    <div class="col-md-3"></div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto col-md-10" style="color:black;margin-top: 5em;">
+                                
+                                <li class="nav-item " style="height: 100%;margin-left: 2em;">
+                                     <a class="nav-link fw-bold" href="#"  style="color:black;">DealerLocator</a>
+                                </li>
+                                <li class="nav-item">
+                                     <a class="nav-link fw-bold" href="#"  style="color:black;margin-left: 2em;">TestRide </a>
+                                </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link fw-bold" href="#"  style="color:black;margin-left: 2em;">India_English </a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link fw-bold" href="#"  style="color:black;margin-left: 2em;">India_English</a>
+                                </li>
+                            </ul>
+                     </div>
+                </div>
+            </div>
+
+            <div class="row " style="margin-top: 2em;" >
+        
+                
+                <div class="col-md-1 col-2 col-sm-1"></div>
+                <div class="col-md-4 col-8 col-sm-11  " style="margin-top: 6em;">
+                    <p>JANUARY 18, 2023</p>
+                    <h2 style="    font-size: 2em;
+                    line-height: 2rem;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;">CELEBRATING 120 YEARS OF HARLEY-<br>DAVIDSON</h2>
+                    <p style="word-wrap:break-word ;">2023 marks the 120th Anniversary of Harley-Davidson, a landmark year in which we’ll honor our rich heritage, celebrate with our community, and reveal incredible new motorcycles and products offerings from The Motor Company. Join us for the kickoff on January 18, 2023. 
+
+                    </p>
+
+                
+            </div>
+            
+            
+            
+                <div class="col-md-6 col-12 col-sm-12 " style="margin-top: 3em;">
+                    <img src="images/my23-teaser-homepage-media-card.webp"  alt="#" class="col-md-12 col-12" >
+
+
+                </div>
+                
+            </div>
+            
+            </div>
+        
+
+    </section>
+    <section  style="background-color:lightgray;margin-top: 2em;padding-top: 2em;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="section3">Triple Threat</h1>
+                    <img src="images/pan-am-special-hero-card-3-up.webp" alt="#" class="col-md-12 col-12">
+                    <h4 class="section3_h4 fw-bold">PAN AMERICAN 1250 SPECIAL</h4>
+                    <p class="section3_p text-dark">
+                        The road never ends on the 2023 Pan America 1250 Special. Our premier two-wheel multi-tool built to endure, designed to explore, and engineered for<br>adventure.</p>
+
+                </div>
+                <div class="col-md-4 " style="padding-top: 3.5em;">
+                    
+                    <img src="images/sportster-s-hero-card-3-up.webp" alt="#" class="col-md-12 col-12" >
+                    <h4 class="section3_h4 fw-bold">SPORTSTER S</h4>
+                    <p class="section3_p text-dark">
+                        Born to outperform, the 2023 Sportster S. The new<br>standard of Sportster performance. It’s time to level up your ride in thrilling new ways.</p>
+
+                </div>
+                <div class="col-md-4 " style="padding-top: 3.5em;">
+                    
+                    <img src="images/road-glide-special-hc-3-up.webp"  alt="#" class="col-md-12 col-12" >
+                    <h4 class="section3_h4 fw-bold">Pan America 1250 Special</h4>
+                    <p class="section3_p text-dark">
+                        The road never ends on the 2023 Pan America 1250<br>Special. Our premier two-wheel multi-tool built to<br>endure, designed to explore, and engineered for<br>adventure.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <h1 class="section3 fw-bold">Shop New Arrivals </h1>
+                <!-- <div class="hero-card-headline " role="heading" >Shop New Arrivals</div> -->
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                   
+                    <img src="images/gm-new-arrivals-mens-hero-card-4x3.webp"  alt="#" class="col-md-12 col-12">
+                    <h4 class="section3_h4 fw-bold">PAN AMERICAN 1250 SPECIAL</h4>
+                   
+
+                </div>
+                <div class="col-md-6 " >
+                    
+                    <img src="images/gm-new-arrivals-womens-hero-card-4x3.webp"  alt="#" class="col-md-12 col-12" >
+                    <h4 class="section3_h4 fw-bold">SPORTSTER S</h4>
+                   
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section style="background-color:lightgray;">
+        <div class="container">
+        <div class="row " style="margin-top: 2em;" >
+        
+                
+           
+        
+        <!-- <div class="dl-md-block"> -->
+            <!-- <div class="col-md-1 col-2 col-sm-1"></div> -->
+        
+            <div class="col-md-7 col-12 col-sm-12 " style="margin-top: 3em;">
+                <img src="images/homecoming-image-media-card.webp"  alt="#" class="col-md-12 col-12" >
+
+
+            </div>
+            <!-- </div> -->
+           
+            <div class="col-md-4 col-8 col-sm-11  " style="margin-top: 6em;margin-left: 2em;">
+                <p>JANUARY 18, 2023</p>
+                <h2 style="    font-size: 2em;
+                line-height: 2rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;">CELEBRATING 120 YEARS OF HARLEY-<br>DAVIDSON</h2>
+                <p style="word-wrap:break-word ;">2023 marks the 120th Anniversary of Harley-Davidson, a landmark year in which we’ll honor our rich heritage, celebrate with our community, and reveal incredible new motorcycles and products offerings from The Motor Company. Join us for the kickoff on January 18, 2023. 
+
+                </p>
+
+            
+        </div>
+        </div>
+    </div>
+        
+        </div>
+    </section>
+    <section>
+        <div class="row text-white" style="background-color: black;padding-top: 2em;">
+            <div class="col-md-5 ">
+                <h2 style="padding-left: 4em;" class="fw-bold">Start more stories for less!
+                </h2>
+
+            </div>
+            <div class="col-md-3">
+                <div class="container">
+                <p style="word-wrap: break-word;">
+                    Owning the road is now made easy with the Harley-Davidson Financial Services - the one and only hassle-free option that fits your bike into your budget. Right from easy EMIs to competitive interest rates, explore the varied services, and hit the road today! </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-warning" style="margin-top: 1em;margin-left: 11em;" >LEARN MORE</button>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <h1 class="section3 fw-bold">Shop New Arrivals </h1>
+                <!-- <div class="hero-card-headline " role="heading" >Shop New Arrivals</div> -->
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                   
+                    <img src="images/mens-gm-hero-card-3-up.webp"  alt="#" class="col-md-12 col-12">
+                    <h4 class="section3_h4 fw-bold">MEN'S GEAR & APPAREL</h4>
+                    <p class="section3_p text-dark" style="word-wrap: break-word;">
+                        Express the rider inside on and off the bike with genuine H-D riding and casual gear. </p>
+                        <h4 class="section3_h4 fw-bold">SHOP MEN'S</h4>
+                   
+
+                </div>
+                <div class="col-md-4 " >
+                    
+                    <img src="images/gm-parts-hero-card-3-up.webp"  alt="#" class="col-md-12 col-12" >
+                    <h4 class="section3_h4 fw-bold">PARTS & ACCESSORIES</h4>
+                    <p class="section3_p text-dark" style="word-wrap: break-word;">
+                        Throw it into high gear. Now is the perfect time to revamp your ride.</p>
+                        <h4 class="section3_h4 fw-bold">SHOP PARTS</h4>
+                   
+
+                </div>
+                <div class="col-md-4 " >
+                    
+                    <img src="images/womens-gm-hero-card-3-up.webp"  alt="#" class="col-md-12 col-12" >
+                    <h4 class="section3_h4 fw-bold">WOMEN'S GEAR & APPAREL</h4>
+                    <p class="section3_p text-dark" style="word-wrap: break-word;">
+                        Show the world who you ride with. Get all your H-D riding and casual gear here. </p>
+                        <h4 class="section3_h4 fw-bold">SHOP WOMEN'S</h4>
+                   
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: black;">
+        <div class="row" style="background-color: black;color: white;">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+                <div style="margin-top: 6vh;">
+                <h2>Harley<span style="color: #ffc107;">-</span>Davidson</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 6vh;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div style="width: 100%;height: 0.5px;background-color: white;"></div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div style="margin-bottom: 4vh;margin-top: 2vh;" class="d-md-none">
+            <div class="row">
+             <div class="col-12">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: black;width: 80%;border-color: white;box-shadow: none;">CUSTOMER SUPPORT
+                    <span class="caret"></span></button>
+             </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: black;width: 80%;border-color: white;box-shadow: none;">MOTORCYCLE SERVICES
+                       <span class="caret"></span></button>
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-12">
+                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: black;width: 80%;border-color: white;box-shadow: none;">FINANCING
+                       <span class="caret"></span></button>
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-12">
+                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: black;width: 80%;border-color: white;box-shadow: none;">ABOUT US
+                       <span class="caret"></span></button>
+                </div>
+               </div>
+         </div>
+
+        
+        <div class="d-none d-sm-none d-md-block">
+       
+        <div class="row" style="background-color: black;color: white;margin-top: 5vh;">
+            <div class="col-md-1">
+                
+            </div>
+            <div class="col-md-4">
+                <h4>CUSTOMER SUPPORT</h4>
+                <div style="margin-top: 3vh;">
+                <a href="#" class="text-white" style="margin-top: 2vh;text-decoration: none;">Contact Us</a>
+                </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white" style="text-decoration: none;">Offers</a>
+                 </div>
+                 <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Response to COVID-19</a>
+                 </div>
+                <h4 style="margin-top: 3vh;">MOTORCYCLE SERVICES</h4>
+                <div style="margin-top: 3vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Authorised Service</a>
+                </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Owner's Manuals</a>
+                 </div>
+                 <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Maintenance Schedules</a>
+                 </div>
+                 <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Software Updates</a>
+                </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Roadside Assistance</a>
+                 </div>
+                <br>
+                <br>
+
+            </div>
+            <div class="col-md-4">
+                <h4>FINANCING</h4>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Motorcycle Financing</a>
+                 </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Apply for Financing</a>
+                 </div>
+                <h4 style="margin-top: 3vh;">ABOUT US</h4>
+                <div style="margin-top: 3vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Authorised Service</a>
+                 </div>
+                <div>
+                <a href="#" class="text-white"style="text-decoration: none;">Owner's Manuals</a>
+                </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Maintenance Schedules</a>
+                 </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Software Updates</a>
+                </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Roadside Assistance</a>
+                 </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white"style="text-decoration: none;">Roadside Assistance</a>
+                </div>
+                <div style="margin-top: 2vh;">
+                <a href="#" class="text-white" style="text-decoration: none;">Roadside Assistance</a>
+                 </div>
+                
+            </div>
+            
+         </div>
+            
+        </div>
+        <div class="row" style="margin-top: -1vh;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div style="width: 100%;height: 0.5px;background-color: white;"></div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row" style="margin-top: 5vh;">
+            <div class="col-xl-3 col-12 col-sm-12 col-md-12" style="padding-left: 10vw;">
+                <a href="#" class="text-white" style="margin-left: 1vw;text-decoration: none;">Sitemap</a>
+                <a href="#" class="text-white" style="margin-left: 1vw;text-decoration: none;"> Disclaimers</a>
+            </div>
+            <!-- <div class="col-sm-1 d-none d-sm-block d-md-block d-lg-block d-xl-none"></div> -->
+            <div class="col-xl-5 col-12 col-sm-10 col-md-12 offset-1">
+                <a href="#" class="text-white" style="margin-left: 1vw;text-decoration: none;">Terms of Use </a>
+                <a href="#" class="text-white" style="margin-left: 1vw;text-decoration: none;">Privacy Policy </a>
+                <a href="#" class="text-white" style="margin-left: 1vw;text-decoration: none;">Cookie Policy</a>
+                <a href="#" class="text-white" style="margin-left: 1vw;text-decoration: none;"> Manage Cookie Preferences</a>
+            
+            </div>
+            
+        </div>
+        <div class="row" style="margin-top: 5vh;">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div style="width: 100%;height: 0.5px;background-color: white;"></div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row" style="margin-top: 2vh;padding-bottom: 2vh;">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="background-color: black;border-color: white;box-shadow: none;">Dropdown Example
+                    <span class="caret"></span></button>
+                
+            </div>
+            <div class="col-md-4" style="font-size:small;line-height: 1;">
+                <label style="word-wrap: break-word;">©2022 H-D or its affiliates. HARLEY-DAVIDSON, HARLEY, H-D, and the Bar and Shield Logo are among the trademarks of H-D U.S.A., LLC. Third-party trademarks are the property of their respective owners.</label>
+            </div>
+            <div class="col-md-4">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/512/59/59439.png" style="color:"> -->
+            </div>
+        </div>
+        
+    </footer>
+    
+  
+   
+       
+   
+
+    
+       
+          
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
